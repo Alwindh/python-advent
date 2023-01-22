@@ -28,8 +28,14 @@ def checkPartialContain(pair):
     partialContain = checkPartialElfs(firstElf, secondElf)
     return partialContain
 
+fullContainedPairs = 0
+for pairs in pairsList:
+    if checkFullContain(pairs):
+        fullContainedPairs +=1
+print(f'there are {fullContainedPairs} pairs where one fully contains the other')
+
 containedPairs = 0
 for pairs in pairsList:
     if checkPartialContain(pairs):
-        containedPairs +=1
-print(containedPairs)
+        containedPairs += 1
+print(f'there are {containedPairs} pairs where there is at least some overlap')
